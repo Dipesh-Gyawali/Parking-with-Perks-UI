@@ -13,10 +13,10 @@ export const Login = () => {
 
         <div className="login-second-container">
           <p>
-            Sign In <span>to your Account</span>
+            <span>Sign In</span> to your Account
           </p>
 
-          <div>
+          <div className="email-password-btn-container">
             <label htmlFor="email">Email</label>
             <input type="email" id="email" placeholder="abc@gmail.com" />
 
@@ -27,7 +27,7 @@ export const Login = () => {
               placeholder="Enter 8+ characters"
             />
 
-            <p>Forget Password?</p>
+            <p className="forget-pass">Forget Password?</p>
 
             <button>Sign In</button>
             <button>Continue with Google</button>
