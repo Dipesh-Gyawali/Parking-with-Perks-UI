@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./_header.scss";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   const [auth, setAuth] = useState(false);
@@ -7,22 +8,22 @@ export const Header = () => {
     <div className="header-container">
       <ul>
         <li>
-          <a href="/">Home</a>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <a href="/">About</a>
+          <Link to="/">About</Link>
         </li>
         <li>
-          <a href="/">Contact Us</a>
+          <Link to="/">Contact Us</Link>
         </li>
         <li>
-          <a href="/">Product</a>
+          <Link to="/">Product</Link>
         </li>
-        {!auth && (
-          <li>
-            <a href="/">Log in</a>
-          </li>
-        )}
+        {/* {!auth && ( */}
+        <li>
+          <Link to="/login">Log in</Link>
+        </li>
+        {/* )}} */}
       </ul>
     </div>
   );
