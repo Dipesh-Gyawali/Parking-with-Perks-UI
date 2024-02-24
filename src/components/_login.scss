@@ -116,6 +116,12 @@
         }
       }
       .continue-btn {
+        display: flex; /* Use flexbox */
+        align-items: center; /* Center content vertically */
+        justify-content: center; /* Space between content */
+        padding: 10px 20px;
+        gap: 1rem;
+
         border: 1px solid #ccc; /* Border color */
 
         font-family: "Poppins", sans-serif;

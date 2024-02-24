@@ -1,4 +1,6 @@
 import "./_login.scss";
+import { FaGoogle } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 
 export const Login = () => {
   return (
@@ -30,8 +32,12 @@ export const Login = () => {
             <p className="forget-pass">Forget Password?</p>
 
             <button className="signin-btn">Sign In</button>
-            <button className="continue-btn">Continue with Google</button>
-            <button className="continue-btn">Continue with LinkedIn</button>
+
+            <button className="continue-btn">
+              <FaGoogle /> Continue with Google
+            </button>
+            <button className="continue-btn">
+            <FaLinkedin /> Continue with LinkedIn</button>
           </div>
         </div>
       </div>
