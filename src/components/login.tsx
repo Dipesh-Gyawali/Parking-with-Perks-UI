@@ -6,13 +6,15 @@ export const Login = () => {
       <div className="login-main-container">
         <div className="login-first-container">
           <div className="img-container">
-            <img src="" alt="" />
+            <img src="../src/assets/logo.png" alt="logo" />
           </div>
           <p>PARK WITH PERKS</p>
         </div>
 
         <div className="login-second-container">
-          <p>Sign In <span>to your Account</span></p>
+          <p>
+            Sign In <span>to your Account</span>
+          </p>
 
           <div>
             <label htmlFor="email">Email</label>
