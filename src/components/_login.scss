@@ -7,10 +7,8 @@
   background-image: url("../assets/background-left.png");
   background-repeat: no-repeat;
   height: calc(100vh - 47px);
-  border: 1px solid red;
 
   .login-first-container {
-    border: 1px solid red;
     width: 50%;
     height: 100%;
     display: flex;
@@ -35,7 +33,6 @@
     }
   }
   .login-second-container {
-    border: 1px solid red;
     height: 100%;
     width: 50%;
     display: flex;
@@ -56,7 +53,6 @@
     .email-password-btn-container {
       display: flex;
       flex-direction: column;
-      border: 2px solid black;
       gap: 0.7rem;
 
       label {
@@ -86,11 +82,13 @@
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
-        border: 1px solid red;
         color: #4e4e4e;
         font-family: "Poppins", sans-serif;
         font-size: 14px;
         font-weight: 400;
+        &:hover {
+          color: blue;
+        }
       }
       .signin-btn {
         font-family: "Poppins", sans-serif;
