@@ -92,7 +92,7 @@
         font-size: 14px;
         font-weight: 400;
       }
-      button {
+      .signin-btn {
         font-family: "Poppins", sans-serif;
         font-size: 16px;
         background-color: #003da8;
@@ -113,6 +113,30 @@
         }
         &:hover {
           color: rgba(255, 255, 255, 0.459);
+        }
+      }
+      .continue-btn {
+        border: 1px solid #ccc; /* Border color */
+
+        font-family: "Poppins", sans-serif;
+        font-size: 16px;
+        color: #767676;
+        background-color: #ffffff;
+        font-weight: 500;
+        border-radius: 7px;
+        width: 448px;
+        height: 40px;
+        cursor: pointer;
+        transition: all ease 0.3s;
+        @media (max-width: 1290px) {
+          width: 300px;
+        }
+        @media (max-width: 768px) {
+          width: 225px;
+        }
+        &:hover {
+          color: rgba(19, 17, 17, 0.459);
+          border: 1px solid #bba1a1;
         }
       }
     }

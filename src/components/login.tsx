@@ -29,9 +29,9 @@ export const Login = () => {
 
             <p className="forget-pass">Forget Password?</p>
 
-            <button>Sign In</button>
-            <button>Continue with Google</button>
-            <button>Continue with Google</button>
+            <button className="signin-btn">Sign In</button>
+            <button className="continue-btn">Continue with Google</button>
+            <button className="continue-btn">Continue with LinkedIn</button>
           </div>
         </div>
       </div>
