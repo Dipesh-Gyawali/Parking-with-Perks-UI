@@ -7,6 +7,9 @@
   background-image: url("../assets/background-left.png");
   background-repeat: no-repeat;
   height: calc(100vh - 47px);
+  @media (max-width: 1290px) {
+    background-image: none;
+  }
 
   .login-first-container {
     width: 50%;
@@ -16,6 +19,13 @@
     justify-content: center;
     align-items: center;
     gap: 1.5rem;
+    @media (max-width: 768px) {
+      display: none;
+    }
+
+    @media (max-width: 1290px) {
+      display: none;
+    }
     .img-container {
       height: 200px;
       width: 194.09px;
@@ -40,12 +50,18 @@
     align-items: center;
     justify-content: center;
     gap: 1.5rem;
+    @media (max-width: 768px) {
+      width: 100%;
+    }
 
     p {
       font-family: "Poppins", sans-serif;
       font-size: 32px;
       font-weight: bold;
       color: #4e4e4e;
+      @media (max-width: 576px) {
+        font-size: 6vw;
+      }
       span {
         color: #00c399;
       }
@@ -137,7 +153,12 @@
         }
         @media (max-width: 768px) {
           width: 225px;
+          font-size: 2vw;
         }
+        @media (max-width: 576px) {
+          font-size: 2.5vw;
+        }
+
         &:hover {
           color: rgba(19, 17, 17, 0.459);
           border: 1px solid #bba1a1;
