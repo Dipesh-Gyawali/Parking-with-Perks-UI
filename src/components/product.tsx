@@ -1,27 +1,56 @@
 import "./_product.scss";
 
 export const Product = () => {
+    
+  // Define an array of product data
+  const products = [
+    {
+      imageSrc: "./src/assets/park.png",
+      occupancy: "20%",
+      parkedVehicles: 17,
+      location: "Thamel",
+      warnings: 2,
+    },
+    {
+      imageSrc: "./src/assets/park.png",
+      occupancy: "30%",
+      parkedVehicles: 18,
+      location: "TU Ground",
+      warnings: 5,
+    },
+    {
+      imageSrc: "./src/assets/park.png",
+      occupancy: "50%",
+      parkedVehicles: 30,
+      location: "Ratna Park",
+      warnings: 1,
+    },
+
+    // Add more product objects as needed
+  ];
+
   return (
-    <>
-      <div className="product-main-container">
-        <div className="product-container">
+    <div className="product-main-container">
+      {/* Map over the products array */}
+      {products.map((product, index) => (
+        <div className="product-container" key={index}>
           <div className="img-container">
-            <img src="./src/assets/park.png" alt="Parking Image" />
+            <img src={product.imageSrc} alt="Parking Image" />
             <div className="percentage-overlay">
-              <span>Occupancy: 20%</span>
-              <span>Parked Vehicles: 17</span>
-              <span>Location Name: 20</span>
-              <span>Warnings: 2</span>
+              <span>Occupancy: {product.occupancy}</span>
+              <span>Parked Vehicles: {product.parkedVehicles}</span>
+              <span>Location: {product.location}</span>
+              <span>Warnings: {product.warnings}</span>
             </div>
           </div>
           <div className="content-container">
-            <p>Location - Street Name</p>
+            <p>Location - {product.location}</p>
             <div className="table-container">
               <table cellPadding="8" cellSpacing="20">
                 <tr className="numbers">
-                  <td>20%</td>
-                  <td>17</td>
-                  <td>2</td>
+                  <td>{product.occupancy}</td>
+                  <td>{product.parkedVehicles}</td>
+                  <td>{product.warnings}</td>
                 </tr>
                 <tr className="characters">
                   <td>Occupancy</td>
@@ -32,7 +61,7 @@ export const Product = () => {
             </div>
           </div>
         </div>
-      </div>
-    </>
+      ))}
+    </div>
   );
 };
