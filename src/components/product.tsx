@@ -7,6 +7,7 @@ export const Product = () => {
   // Define an array of product data
   const products = [
     {
+      id: 1,
       imageSrc: "./src/assets/park.png",
       occupancy: "20%",
       parkedVehicles: 17,
@@ -14,6 +15,7 @@ export const Product = () => {
       warnings: 2,
     },
     {
+      id: 2,
       imageSrc: "./src/assets/park.png",
       occupancy: "30%",
       parkedVehicles: 18,
@@ -21,6 +23,7 @@ export const Product = () => {
       warnings: 5,
     },
     {
+      id: 3,
       imageSrc: "./src/assets/park.png",
       occupancy: "50%",
       parkedVehicles: 30,
@@ -39,7 +42,7 @@ export const Product = () => {
   return (
     <>
       <div className="search-container">
-        <label htmlFor="search">Search:</label>
+        <label htmlFor="search">Search: </label>
         <input
           type="text"
           id="email"
@@ -51,7 +54,11 @@ export const Product = () => {
       <div className="product-main-container">
         {/* Map over the products array */}
         {filteredProducts.map((product, index) => (
-          <div className="product-container" key={index}>
+          <a
+            className="product-container"
+            key={index}
+            href={`#/product/${product.id}`}
+          >
             <div className="img-container">
               <img src={product.imageSrc} alt="Parking Image" />
               <div className="percentage-overlay">
@@ -78,7 +85,7 @@ export const Product = () => {
                 </table>
               </div>
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </>
