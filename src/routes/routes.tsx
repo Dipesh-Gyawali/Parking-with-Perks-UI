@@ -13,12 +13,6 @@ export function Route() {
     {
       path: "/login",
       element: <Login />,
-      //   children: [
-      //     {
-      //         path: "/login",
-      //       element: <Login />,
-      //     },
-      //   ],
     },
     {
       path: "/product",
@@ -28,10 +22,6 @@ export function Route() {
           path: " /product", // Matches "/product" exactly
           element: <Product />, // Assuming you have a ProductList component
         },
-        // {
-        //   path: ":id", // Matches "/product/:productId"
-        //   element: <ProductDetail />,
-        // },
       ],
     },
     {
