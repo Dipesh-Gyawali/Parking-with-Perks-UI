@@ -68,7 +68,6 @@ export const ProductDetail = () => {
               <li>Vehicles without proper authorization are not allowed.</li>
               <li>Parking is only permitted during specified hours. Violators may be subject to fines or towing.</li>
               <li>Pay required parking fees using designated methods, and display proof of payment. </li>
-              <li></li>
             </ul>
           </div>
         </div>
