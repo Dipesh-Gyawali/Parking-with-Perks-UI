@@ -1,0 +1,39 @@
+.product-detail-main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 600;
+  font-size: 18px;
+  font-family: "Inter", sans-serif;
+  padding: 1.5rem;
+
+  .title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    a {
+      display: flex;
+      text-decoration: none;
+      color: inherit;
+      border: 1px solid red;
+    }
+    p {
+      color: #003da8;
+      font-size: 18px;
+    }
+  }
+  .table-container {
+    background-color: #dfe0e2;
+    border-radius: 5px;
+
+    .numbers {
+      color: #003da8;
+    }
+    .characters {
+    }
+  }
+}
