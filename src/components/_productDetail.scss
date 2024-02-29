@@ -12,28 +12,69 @@
   .title {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     gap: 1rem;
+    width: 100%;
     a {
       display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      align-self: flex-start;
       text-decoration: none;
       color: inherit;
-      border: 1px solid red;
+      font-size: 14px;
+      gap: 0.3rem;
     }
     p {
       color: #003da8;
       font-size: 18px;
+      margin: 0; /* Remove default margins */
+      text-align: center;
+      flex-grow: 1;
     }
   }
-  .table-container {
-    background-color: #dfe0e2;
-    border-radius: 5px;
 
-    .numbers {
-      color: #003da8;
+  .main-card-container {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    .card-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: 5px;
+      // background-color: #dfe0e2;
+      background-color: #f4f6fe;
+      padding: 1rem;
+      gap: 1rem;
+
+      p {
+        color: #003da8;
+      }
+      span {
+        color: #3b3b3b;
+      }
     }
-    .characters {
+  }
+  .main-chart-container{
+    .chart-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #f4f6fe;
+      border-radius: 5px;
+      padding: 1rem;
+      p {
+        font-size: 20px;
+        color: #003da8;
+      }
     }
+
   }
 }
