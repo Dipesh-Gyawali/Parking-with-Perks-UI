@@ -10,7 +10,7 @@ export const Home = () => {
           </p>
           <p className="desc">
             Experience the next level of convenience and sustainability with our
-            Smart Parking Detection System - where finding the perfect spot is
+            Smart Parking Detection System - where finding the perfect available spot is
             as smart as it gets.
           </p>
           <button>Get Started</button>
@@ -18,7 +18,7 @@ export const Home = () => {
 
         <div className="second-part-container">
           <div className="img-container">
-            <img src="./src/assets/car.png" alt="aaa" />
+            <img src="./src/assets/car.png" alt="not found" />
           </div>
         </div>
       </div>
