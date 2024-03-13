@@ -17,7 +17,7 @@ export const Header = () => {
           <Link to="/">Contact Us</Link>
         </li>
         <li>
-          <Link to="/product">Product</Link>
+          <Link to="/parkingslot">Parking Slots</Link>
         </li>
         {/* {!auth && ( */}
         <li>

@@ -57,7 +57,7 @@ export const Product = () => {
           <a
             className="product-container"
             key={index}
-            href={`#/product/${product.id}`}
+            href={`#/parkingslot/${product.id}`}
           >
             <div className="img-container">
               <img src={product.imageSrc} alt="Parking Image" />

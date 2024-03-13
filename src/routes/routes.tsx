@@ -15,17 +15,17 @@ export function Route() {
       element: <Login />,
     },
     {
-      path: "/product",
+      path: "/parkingslot",
       element: <Product />,
       children: [
         {
-          path: " /product", // Matches "/product" exactly
+          path: " /parkingslot", // Matches "/product" exactly
           element: <Product />, // Assuming you have a ProductList component
         },
       ],
     },
     {
-      path: "/product/:id",
+      path: "/parkingslot/:id",
       element: <ProductDetail />,
     },
   ]);

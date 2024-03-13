@@ -19,7 +19,7 @@ export const ProductDetail = () => {
     <>
       <div className="product-detail-main-container">
         <div className="title">
-          <a href={`#/product/`}>
+          <a href={`#/parkingslot/`}>
             <IoMdArrowBack /> Back
           </a>
           <p>Overview</p>
@@ -66,8 +66,14 @@ export const ProductDetail = () => {
             <p>Rules</p>
             <ul>
               <li>Vehicles without proper authorization are not allowed.</li>
-              <li>Parking is only permitted during specified hours. Violators may be subject to fines or towing.</li>
-              <li>Pay required parking fees using designated methods, and display proof of payment. </li>
+              <li>
+                Parking is only permitted during specified hours. Violators may
+                be subject to fines or towing.
+              </li>
+              <li>
+                Pay required parking fees using designated methods, and display
+                proof of payment.{" "}
+              </li>
             </ul>
           </div>
         </div>
