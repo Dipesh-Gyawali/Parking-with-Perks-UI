@@ -14,7 +14,7 @@ export const Login = () => {
     signInWithPopup(auth, provider).then((result) => {
       console.log(result);
       isSetAuth(true);
-      navigate("/parkingslot"); // Navigate to the desired URL
+      navigate("/"); // Navigate to the desired URL
     });
   }
   function handleLogout() {
