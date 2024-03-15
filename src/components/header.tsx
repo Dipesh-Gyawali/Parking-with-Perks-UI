@@ -1,9 +1,51 @@
-import { useState } from "react";
 import "./_header.scss";
 import { Link } from "react-router-dom";
+import { auth } from "../firebase/config";
+import { signOut } from "firebase/auth";
+import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router";
 
 export const Header = () => {
-  const [auth, setAuth] = useState(false);
+  const [isAuth, setIsAuth] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        setIsAuth(true);
+      } else {
+        setIsAuth(false);
+      }
+    });
+
+    return unsubscribe;
+  }, []);
+
+  const handleLogout = () => {
+    signOut(auth)
+      .then(() => {
+        setIsAuth(false);
+        navigate("/");
+      })
+      .catch((error) => {
+        console.error("Error signing out: ", error);
+      });
+  };
+
+  // function handleLogin() {
+  //   signInWithPopup(auth, provider).then((result) => {
+  //     console.log(result);
+  //     isSetAuth(true);
+  //     navigate("/parkingslot"); // Navigate to the desired URL
+  //   });
+  // }
+  // function handleLogout() {
+  //   signOut(auth);
+  //   setIsAuth(false);
+  //   navigate("/"); // Navigate to the desired URL
+  // }
+
   return (
     <div className="header-container">
       <ul>
@@ -13,17 +55,26 @@ export const Header = () => {
         <li>
           <Link to="/">About</Link>
         </li>
-        <li>
-          <Link to="/parkingslot">Parking Slots</Link>
-        </li>
-        {/* {!auth && ( */}
-        <li>
-          <Link to="/login">Log in</Link>
-        </li>
-        <li>
-          <Link to="/register">Register</Link>
-        </li>
-        {/* )}} */}
+        {isAuth && (
+          <li>
+            <Link to="/parkingslot">Parking Slots</Link>
+          </li>
+        )}
+        {!isAuth && location.pathname !== "/register" && (
+          <li>
+            <Link to="/login">Login</Link>
+          </li>
+        )}
+        {isAuth && (
+          <li>
+            <Link onClick={handleLogout}>Logout</Link>
+          </li>
+        )}
+        {!isAuth && location.pathname !== "/login" && (
+          <li>
+            <Link to="/register">Register</Link>
+          </li>
+        )}
       </ul>
     </div>
   );
