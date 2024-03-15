@@ -14,14 +14,14 @@ export const Header = () => {
           <Link to="/">About</Link>
         </li>
         <li>
-          <Link to="/">Contact Us</Link>
-        </li>
-        <li>
           <Link to="/parkingslot">Parking Slots</Link>
         </li>
         {/* {!auth && ( */}
         <li>
           <Link to="/login">Log in</Link>
+        </li>
+        <li>
+          <Link to="/register">Register</Link>
         </li>
         {/* )}} */}
       </ul>

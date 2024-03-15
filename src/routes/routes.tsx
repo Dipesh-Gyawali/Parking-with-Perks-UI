@@ -3,6 +3,7 @@ import { Home } from "../components/home";
 import { Login } from "../components/login";
 import { Product } from "../components/product";
 import { ProductDetail } from "../components/productDetail";
+import { Register } from "../components/register";
 
 export function Route() {
   let routes = useRoutes([
@@ -13,6 +14,10 @@ export function Route() {
     {
       path: "/login",
       element: <Login />,
+    },
+    {
+      path: "/register",
+      element: <Register />,
     },
     {
       path: "/parkingslot",
