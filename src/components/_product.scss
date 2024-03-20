@@ -138,3 +138,25 @@
 
   font-family: "Inter", sans-serif;
 }
+
+// -----------------------------------------------------------------
+
+.add-more-slots {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  color: #6c737f;
+  height: 200px;
+  width: 250px;
+  background-color: #dfe0e2;
+  font-size: 50px;
+  gap: 1rem;
+  .add {
+  }
+  p {
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+  }
+}

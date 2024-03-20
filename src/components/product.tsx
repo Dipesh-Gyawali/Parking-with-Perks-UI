@@ -88,6 +88,11 @@ export const Product = () => {
           </a>
         ))}
       </div>
+
+      <div className="add-more-slots">
+        <div className="add">+</div>
+        <p>Add Parking Space</p>
+      </div>
     </>
   );
 };
