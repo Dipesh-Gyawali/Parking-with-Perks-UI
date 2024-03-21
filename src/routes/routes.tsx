@@ -5,6 +5,8 @@ import { Product } from "../components/product";
 import { ProductDetail } from "../components/productDetail";
 import { Register } from "../components/register";
 import { About } from "../components/about";
+import { ProtectedRoute } from "./protectedroute";
+import { PrivateRoute } from "./privateroute";
 
 export function Route() {
   let routes = useRoutes([
@@ -13,17 +15,38 @@ export function Route() {
       element: <Home />,
     },
     {
-      path: "/login",
-      element: <Login />,
+      path: "/",
+      element: <ProtectedRoute />,
+      children: [
+        {
+          path: "/login",
+          element: <Login />,
+        },
+      ],
     },
+    // {
+    //   path: "/login",
+    //   element: <Login />,
+    // },
     {
-      path: "/register",
-      element: <Register />,
+      path: "/",
+      element: <ProtectedRoute />,
+      children: [
+        {
+          path: "/register",
+          element: <Register />,
+        },
+      ],
     },
+    // 
+    //   element: <Register />,
+    // },
+
     {
       path: "/about",
       element: <About />,
     },
+
     {
       path: "/parkingslot",
       element: <Product />,
@@ -34,6 +57,7 @@ export function Route() {
         },
       ],
     },
+
     {
       path: "/parkingslot/:id",
       element: <ProductDetail />,

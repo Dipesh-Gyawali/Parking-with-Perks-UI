@@ -1,9 +1,24 @@
-// import { Navigate, Outlet } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Navigate, Outlet } from "react-router-dom";
+import { auth } from "../firebase/config";
 
-// export const PrivateRoute = () => {
-//     const isAuthenticated = true;
+export const PrivateRoute = () => {
+  // const isAuthenticated = true;
+  const [isAuth, setIsAuth] = useState(false);
 
-//   return isAuthenticated ? <Outlet></Outlet> : <Navigate to="/login" />
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        setIsAuth(true);
+        console.log(user, "privateaxxxxxxxxxxxxxxx");
+      } else {
+        setIsAuth(false);
+        console.log(user, "privatebxxxxxxxxxxxxxxx");
+      }
+    });
 
-// };
-  
+    return unsubscribe;
+  }, []);
+
+  return isAuth ? <Outlet></Outlet> : <Navigate to="/login" />;
+};

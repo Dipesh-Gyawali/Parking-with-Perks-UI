@@ -58,25 +58,29 @@ export const Header = () => {
           <Link to="/about">About</Link>
         </li>
         {isAuth && (
-          <li>
-            <Link to="/parkingslot">Parking Slots</Link>
-          </li>
-        )}
-        {!isAuth && location.pathname !== "/register" && (
+        <li>
+          <Link to="/parkingslot">Parking Slots</Link>
+        </li>
+         )} 
+        {/* {!isAuth && location.pathname !== "/register" && ( */}
+        {!isAuth && (
           <li>
             <Link to="/login">Login</Link>
           </li>
         )}
+        {/* )} */}
         {isAuth && (
           <li>
             <Link onClick={handleLogout}>Logout</Link>
           </li>
         )}
-        {!isAuth && location.pathname !== "/login" && (
+        {/* {!isAuth && location.pathname !== "/login" && ( */}
+        {!isAuth && (
           <li>
             <Link to="/register">Register</Link>
           </li>
         )}
+        {/* )} */}
       </ul>
     </div>
   );
