@@ -38,9 +38,6 @@ export function Route() {
         },
       ],
     },
-    // 
-    //   element: <Register />,
-    // },
 
     {
       path: "/about",
