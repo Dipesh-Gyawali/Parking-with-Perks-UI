@@ -128,7 +128,7 @@ export const Product = () => {
             </div>
           </a>
         ))}
-         {products.map((product, index) => (
+        {products.map((product, index) => (
           <a
             className="product-container"
             key={index}
@@ -179,11 +179,12 @@ export const Product = () => {
             <form onSubmit={handleSubmit}>
               <label htmlFor="id">ID:</label>
               <input
-                type="text"
+                type="number"
                 id="id"
                 name="id"
                 value={newSlot.id}
                 onChange={handleInputChange}
+                required
               />
               <label htmlFor="imageSrc">Image Source:</label>
               <input
@@ -192,6 +193,7 @@ export const Product = () => {
                 name="imageSrc"
                 value={newSlot.imageSrc}
                 onChange={handleInputChange}
+                required
               />
               <label htmlFor="location">Location:</label>
               <input
@@ -200,6 +202,7 @@ export const Product = () => {
                 name="location"
                 value={newSlot.location}
                 onChange={handleInputChange}
+                required
               />
               {/* <label htmlFor="occupancy">Occupancy:</label>
               <input
