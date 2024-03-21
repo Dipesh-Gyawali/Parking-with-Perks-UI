@@ -1,6 +1,33 @@
+import { useEffect, useState } from "react";
 import "./_home.scss";
+import { auth } from "../firebase/config";
+import { useNavigate } from "react-router";
 
 export const Home = () => {
+  const [isAuth, setIsAuth] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        setIsAuth(true);
+        console.log(user, "homeaxxxxxxxxxxxxxxx");
+      } else {
+        setIsAuth(false);
+        console.log(user, "homebxxxxxxxxxxxxxxx");
+      }
+    });
+
+    return unsubscribe;
+  }, []);
+
+  const handleGetStarted = () => {
+    if (isAuth) {
+      navigate("/parkingslot");
+    } else {
+      navigate("/login");
+    }
+  };
   return (
     <>
       <div className="home-container">
@@ -13,7 +40,7 @@ export const Home = () => {
             Smart Parking Detection System - where finding the perfect spot is
             as smart as it gets.
           </p>
-          <button>Get Started</button>
+          <button onClick={handleGetStarted}>Get Started</button>
         </div>
 
         <div className="second-part-container">

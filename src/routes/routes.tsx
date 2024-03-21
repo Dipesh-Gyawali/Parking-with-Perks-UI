@@ -4,6 +4,7 @@ import { Login } from "../components/login";
 import { Product } from "../components/product";
 import { ProductDetail } from "../components/productDetail";
 import { Register } from "../components/register";
+import { About } from "../components/about";
 
 export function Route() {
   let routes = useRoutes([
@@ -18,6 +19,10 @@ export function Route() {
     {
       path: "/register",
       element: <Register />,
+    },
+    {
+      path: "/about",
+      element: <About />,
     },
     {
       path: "/parkingslot",

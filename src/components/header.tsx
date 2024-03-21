@@ -14,8 +14,10 @@ export const Header = () => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       if (user) {
         setIsAuth(true);
+        console.log(user, "axxxxxxxxxxxxxxx");
       } else {
         setIsAuth(false);
+        console.log(user, "bxxxxxxxxxxxxxxx");
       }
     });
 
@@ -53,7 +55,7 @@ export const Header = () => {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/">About</Link>
+          <Link to="/about">About</Link>
         </li>
         {isAuth && (
           <li>
