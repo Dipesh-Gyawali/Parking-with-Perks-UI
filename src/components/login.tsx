@@ -57,9 +57,9 @@ export const Login = () => {
             <button className="continue-btn" onClick={handleLogin}>
               <FaGoogle /> Continue with Google
             </button>
-            <button className="continue-btn" onClick={handleLogin}>
+            {/* <button className="continue-btn" onClick={handleLogin}>
               <FaLinkedin /> Continue with LinkedIn
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
