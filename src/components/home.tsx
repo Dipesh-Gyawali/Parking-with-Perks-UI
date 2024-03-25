@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./_home.scss";
+// @ts-ignore
 import { auth } from "../firebase/config";
 import { useNavigate } from "react-router";
 
@@ -8,7 +9,7 @@ export const Home = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
+    const unsubscribe = auth.onAuthStateChanged((user:any) => {
       if (user) {
         setIsAuth(true);
         console.log(user, "homeaxxxxxxxxxxxxxxx");

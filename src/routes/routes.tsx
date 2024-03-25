@@ -6,7 +6,7 @@ import { ProductDetail } from "../components/productDetail";
 import { Register } from "../components/register";
 import { About } from "../components/about";
 import { ProtectedRoute } from "./protectedroute";
-import { PrivateRoute } from "./privateroute";
+// import { PrivateRoute } from "./privateroute";
 
 export function Route() {
   let routes = useRoutes([

@@ -53,7 +53,7 @@ export const Product = () => {
   const handleAddMoreSlots = () => {
     setShowAddModal(true);
   };
-  const handleInputChange = (e) => {
+  const handleInputChange = (e:any) => {
     const { name, value } = e.target;
     setNewSlot({
       ...newSlot,
@@ -61,9 +61,10 @@ export const Product = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e:any) => {
     e.preventDefault();
     // Add the new slot to the beginning of products array
+      // @ts-ignore
     setProducts([newSlot, ...products]);
     console.log("New Slot:", newSlot);
     // Update the products array directly
@@ -128,13 +129,14 @@ export const Product = () => {
             </div>
           </a>
         ))}
-        {products.map((product, index) => (
+        {products.map((product:any, index) => (
           <a
             className="product-container"
             key={index}
             href={`#/parkingslot/${product.id}`}
-          >
+            >
             <div className="img-container">
+          
               <img src={product.imageSrc} alt="Parking Image" />
               <div className="percentage-overlay">
                 <span>Location: {product.location}</span>

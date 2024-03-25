@@ -1,6 +1,8 @@
 import { Navigate, Outlet } from "react-router";
 
 import { useEffect, useState } from "react";
+// @ts-ignore
+
 import { auth } from "../firebase/config";
 
 export const ProtectedRoute = () => {
@@ -8,7 +10,7 @@ export const ProtectedRoute = () => {
   const [isAuth, setIsAuth] = useState(false);
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
+    const unsubscribe = auth.onAuthStateChanged((user:any) => {
       if (user) {
         setIsAuth(true);
         console.log(user, "protectedaxxxxxxxxxxxxxxx");

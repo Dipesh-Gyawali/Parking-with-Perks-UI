@@ -1,17 +1,17 @@
 import "./_header.scss";
 import { Link } from "react-router-dom";
+// @ts-ignore
 import { auth } from "../firebase/config";
 import { signOut } from "firebase/auth";
 import { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router";
+import {  useNavigate } from "react-router";
 
 export const Header = () => {
   const [isAuth, setIsAuth] = useState(false);
   const navigate = useNavigate();
-  const location = useLocation();
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
+    const unsubscribe = auth.onAuthStateChanged((user:any) => {
       if (user) {
         setIsAuth(true);
         console.log(user, "axxxxxxxxxxxxxxx");
@@ -70,8 +70,9 @@ export const Header = () => {
         )}
         {/* )} */}
         {isAuth && (
+            // @ts-ignore
           <li>
-            <Link onClick={handleLogout}>Logout</Link>
+            <a onClick={handleLogout}>Logout</a>
           </li>
         )}
         {/* {!isAuth && location.pathname !== "/login" && ( */}

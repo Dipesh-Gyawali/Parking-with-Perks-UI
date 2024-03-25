@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { Navigate, Outlet } from "react-router-dom";
+// @ts-ignore
+
 import { auth } from "../firebase/config";
 
 export const PrivateRoute = () => {
@@ -7,7 +9,7 @@ export const PrivateRoute = () => {
   const [isAuth, setIsAuth] = useState(false);
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
+    const unsubscribe = auth.onAuthStateChanged((user: any) => {
       if (user) {
         setIsAuth(true);
         console.log(user, "privateaxxxxxxxxxxxxxxx");
