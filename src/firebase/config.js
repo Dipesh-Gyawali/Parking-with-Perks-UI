@@ -17,24 +17,6 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 
-//////////for register: npm run build
-// const registerForm = document.querySelector(".register");
-// registerForm.addEventListener("submit", (event) => {
-//   event.preventDefault();
-
-//   createUserWithEmailAndPassword(
-//     auth,
-//     registerForm.email.value,
-//     registerForm.password.value
-//   )
-//     .then((credentials) => {
-//       console.log(credentials);
-//     })
-//     .catch((error) => {
-//       console.log(error);
-//     });
-// });
-
 export const db = getFirestore(app);
 export const auth = getAuth(app);
 export const provider = new GoogleAuthProvider();
