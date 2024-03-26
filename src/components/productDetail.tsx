@@ -1,17 +1,15 @@
-// Ensure correct import of useParams from react-router-dom
 import { useParams } from "react-router-dom";
-import "./_productDetail.scss";
 import { IoMdArrowBack } from "react-icons/io";
 import { PieChart, Pie, Tooltip } from "recharts";
 import { useEffect, useState } from "react";
+import "./_productDetail.scss";
 
 export const ProductDetail = () => {
   const { id } = useParams();
-  console.log("ID:", id);
   const [detailData, setDetailData] = useState(null);
 
   useEffect(() => {
-    fetch("./data/productDetail.json")
+    fetch("./data/product.json")
       .then((response) => response.json())
       .then((data) => {
         const detail = data[`place${id}`];
@@ -19,13 +17,6 @@ export const ProductDetail = () => {
       })
       .catch((error) => console.error("Error fetching detail data:", error));
   }, [id]);
-
-  // const data01 = [
-  //   { name: "Free Space", value: 5 },
-  //   { name: "Occupied Space", value: 20 },
-  //   // { name: "Unknown", value: 8 },
-  //   { name: "Total Space", value: 33 },
-  // ];
 
   return (
     <>
@@ -41,16 +32,16 @@ export const ProductDetail = () => {
             <>
               <div className="card-container">
                 <p>Free Space</p>
-                <span>{detailData.free}</span>
+                <span>{detailData.freeSpace}</span>
               </div>
               <div className="card-container">
                 <p>Occupied Spaces</p>
-                <span>{detailData.occupied}</span>
+                <span>{detailData.occupiedSpace}</span>
               </div>
               <div className="card-container">
                 <p>Total Space</p>
                 <span>
-                  {parseInt(detailData.free) + parseInt(detailData.occupied)}
+                  {parseInt(detailData.freeSpace) + parseInt(detailData.occupiedSpace)}
                 </span>
               </div>
             </>
@@ -66,10 +57,10 @@ export const ProductDetail = () => {
                     dataKey="value"
                     isAnimationActive={false}
                     data={[
-                      { name: "Free Space", value: parseInt(detailData.free) },
+                      { name: "Free Space", value: parseInt(detailData.freeSpace) },
                       {
                         name: "Occupied Space",
-                        value: parseInt(detailData.occupied),
+                        value: parseInt(detailData.occupiedSpace),
                       },
                     ]}
                     cx="50%"

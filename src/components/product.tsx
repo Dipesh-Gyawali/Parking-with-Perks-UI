@@ -10,6 +10,8 @@ export const Product = () => {
     id: "",
     imageSrc: "",
     location: "",
+    freeSpace: "",
+    occupiedSpace: "",
     // occupancy: "",
     // parkedVehicles: "",
     // warnings: "",
@@ -87,9 +89,8 @@ export const Product = () => {
       id: "",
       imageSrc: "",
       location: "",
-      // occupancy: "",
-      // parkedVehicles: "",
-      // warnings: "",
+      freeSpace: "",
+      occupiedSpace: "",
     });
   };
 
@@ -117,8 +118,8 @@ export const Product = () => {
               <img src={product.imageSrc} alt="Parking Image" />
               <div className="percentage-overlay">
                 <span>Location: {product.location}</span>
-                {/* <span>Occupancy: {product.occupancy}</span> */}
-                {/* <span>Parked Vehicles: {product.parkedVehicles}</span> */}
+                <span>Free Space: {product.freeSpace}</span>
+                <span>Occupied Space: {product.occupiedSpace}</span>
                 {/* <span>Warnings: {product.warnings}</span> */}
               </div>
             </div>
@@ -127,14 +128,17 @@ export const Product = () => {
               <div className="table-container">
                 <table cellPadding="8" cellSpacing="20">
                   <tr className="numbers">
-                    {/* <td>{product.occupancy}</td>
-                    <td>{product.parkedVehicles}</td>
-                    <td>{product.warnings}</td> */}
+                    <td>{product.freeSpace}</td>
+                    <td>{product.occupiedSpace}</td>
+                    <td>
+                      {parseInt(product.freeSpace) +
+                        parseInt(product.occupiedSpace)}
+                    </td>
                   </tr>
                   <tr className="characters">
-                    <td>Occupancy</td>
-                    <td>Parked</td>
-                    <td>Warning</td>
+                    <td>Free Space </td>
+                    <td>Occupied </td>
+                    <td>Total</td>
                   </tr>
                 </table>
               </div>

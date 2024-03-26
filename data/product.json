@@ -2,12 +2,16 @@
   "place1": {
     "id": 1,
     "imageSrc": "./src/assets/park.png",
-    "location": "Road Side"
+    "location": "Road Side",
+    "freeSpace": "3",
+    "occupiedSpace": "5"
   },
 
   "place2": {
     "id": 2,
     "imageSrc": "./src/assets/park.png",
-    "location": "IT company"
+    "location": "IT company",
+    "freeSpace": "30",
+    "occupiedSpace": "20"
   }
 }
