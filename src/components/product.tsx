@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./_product.scss";
 
 export const Product = () => {
@@ -15,45 +15,57 @@ export const Product = () => {
     // warnings: "",
   });
 
-  // Define an array of product data
-  const productss = [
-    {
-      id: 1,
-      imageSrc: "./src/assets/park.png",
-      location: "Thamel",
-      // occupancy: "20%",
-      // parkedVehicles: 17,
-      // warnings: 2,
-    },
-    {
-      id: 2,
-      imageSrc: "./src/assets/park.png",
-      location: "TU Ground",
-      // occupancy: "30%",
-      // parkedVehicles: 18,
-      // warnings: 5,
-    },
-    {
-      id: 3,
-      imageSrc: "./src/assets/park.png",
-      location: "Ratna Park",
-      // occupancy: "50%",
-      // parkedVehicles: 30,
-      // warnings: 1,
-    },
+  // Fetch data from db.json
+  useEffect(() => {
+    fetch("./data/product.json")
+      .then((response) => response.json())
+      .then((data) => {
+        // Extracting the values from the object and converting them into an array
+        const productsArray = Object.values(data);
+        setProducts(productsArray);
+      })
+      .catch((error) => console.error("Error fetching data:", error));
+  }, []);
 
-    // Add more product objects as needed
-  ];
+  // Define an array of product data
+  // const productss = [
+  //   {
+  //     id: 1,
+  //     imageSrc: "./src/assets/park.png",
+  //     location: "Thamel",
+  //     // occupancy: "20%",
+  //     // parkedVehicles: 17,
+  //     // warnings: 2,
+  //   },
+  //   {
+  //     id: 2,
+  //     imageSrc: "./src/assets/park.png",
+  //     location: "TU Ground",
+  //     // occupancy: "30%",
+  //     // parkedVehicles: 18,
+  //     // warnings: 5,
+  //   },
+  //   {
+  //     id: 3,
+  //     imageSrc: "./src/assets/park.png",
+  //     location: "Ratna Park",
+  //     // occupancy: "50%",
+  //     // parkedVehicles: 30,
+  //     // warnings: 1,
+  //   },
+
+  //   // Add more product objects as needed
+  // ];
 
   // Filter products based on search query
-  const filteredProducts = productss.filter((product) =>
+  const filteredProducts = products.filter((product) =>
     product.location.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   const handleAddMoreSlots = () => {
     setShowAddModal(true);
   };
-  const handleInputChange = (e:any) => {
+  const handleInputChange = (e: any) => {
     const { name, value } = e.target;
     setNewSlot({
       ...newSlot,
@@ -61,10 +73,10 @@ export const Product = () => {
     });
   };
 
-  const handleSubmit = (e:any) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
     // Add the new slot to the beginning of products array
-      // @ts-ignore
+    // @ts-ignore
     setProducts([newSlot, ...products]);
     console.log("New Slot:", newSlot);
     // Update the products array directly
@@ -95,7 +107,7 @@ export const Product = () => {
       </div>
       <div className="product-main-container">
         {/* Map over the products array */}
-        {filteredProducts.map((product, index) => (
+        {filteredProducts.map((product: any, index) => (
           <a
             className="product-container"
             key={index}
@@ -129,14 +141,13 @@ export const Product = () => {
             </div>
           </a>
         ))}
-        {products.map((product:any, index) => (
+        {products.map((product: any, index) => (
           <a
             className="product-container"
             key={index}
             href={`#/parkingslot/${product.id}`}
-            >
+          >
             <div className="img-container">
-          
               <img src={product.imageSrc} alt="Parking Image" />
               <div className="percentage-overlay">
                 <span>Location: {product.location}</span>

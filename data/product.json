@@ -1,0 +1,31 @@
+{
+  "place1": {
+    "id": 1,
+    "imageSrc": "./src/assets/park.png",
+    "location": "Road Side"
+  },
+
+  "place2": {
+    "id": 2,
+    "imageSrc": "./src/assets/park.png",
+    "location": "IT company"
+  },
+
+  "place3": {
+    "id": 3,
+    "imageSrc": "./src/assets/park.png",
+    "location": "Construction Site"
+  },
+
+  "place4": {
+    "id": 4,
+    "imageSrc": "./src/assets/park.png",
+    "location": "Retail store parking"
+  },
+
+  "place5": {
+    "id": 5,
+    "imageSrc": "./src/assets/park.png",
+    "location": "Highway Side"
+  }
+}

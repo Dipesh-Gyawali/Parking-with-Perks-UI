@@ -11,7 +11,7 @@ export const ProductDetail = () => {
   const data01 = [
     { name: "Free Space", value: 5 },
     { name: "Occupied Space", value: 20 },
-    { name: "Unknown", value: 8 },
+    // { name: "Unknown", value: 8 },
     { name: "Total Space", value: 33 },
   ];
 
@@ -33,10 +33,10 @@ export const ProductDetail = () => {
             <p>Occupied Spaces</p>
             <span>20</span>
           </div>
-          <div className="card-container">
+          {/* <div className="card-container">
             <p>Unknown</p>
             <span>8</span>
-          </div>
+          </div> */}
           <div className="card-container">
             <p>Total Space</p>
             <span>33</span>
