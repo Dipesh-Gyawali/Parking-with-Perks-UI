@@ -141,40 +141,7 @@ export const Product = () => {
             </div>
           </a>
         ))}
-        {products.map((product: any, index) => (
-          <a
-            className="product-container"
-            key={index}
-            href={`#/parkingslot/${product.id}`}
-          >
-            <div className="img-container">
-              <img src={product.imageSrc} alt="Parking Image" />
-              <div className="percentage-overlay">
-                <span>Location: {product.location}</span>
-                {/* <span>Occupancy: {product.occupancy}</span> */}
-                {/* <span>Parked Vehicles: {product.parkedVehicles}</span> */}
-                {/* <span>Warnings: {product.warnings}</span> */}
-              </div>
-            </div>
-            <div className="content-container">
-              <p>Location - {product.location}</p>
-              <div className="table-container">
-                <table cellPadding="8" cellSpacing="20">
-                  <tr className="numbers">
-                    {/* <td>{product.occupancy}</td>
-                    <td>{product.parkedVehicles}</td>
-                    <td>{product.warnings}</td> */}
-                  </tr>
-                  <tr className="characters">
-                    <td>Occupancy</td>
-                    <td>Parked</td>
-                    <td>Warning</td>
-                  </tr>
-                </table>
-              </div>
-            </div>
-          </a>
-        ))}
+
         <div className="add-more-slots" onClick={handleAddMoreSlots}>
           <div className="add">+</div>
           <p>Add Parking Space</p>
