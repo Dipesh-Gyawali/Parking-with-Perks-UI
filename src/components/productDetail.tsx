@@ -41,7 +41,8 @@ export const ProductDetail = () => {
               <div className="card-container">
                 <p>Total Space</p>
                 <span>
-                  {parseInt(detailData.freeSpace) + parseInt(detailData.occupiedSpace)}
+                  {parseInt(detailData.freeSpace) +
+                    parseInt(detailData.occupiedSpace)}
                 </span>
               </div>
             </>
@@ -57,7 +58,10 @@ export const ProductDetail = () => {
                     dataKey="value"
                     isAnimationActive={false}
                     data={[
-                      { name: "Free Space", value: parseInt(detailData.freeSpace) },
+                      {
+                        name: "Free Space",
+                        value: parseInt(detailData.freeSpace),
+                      },
                       {
                         name: "Occupied Space",
                         value: parseInt(detailData.occupiedSpace),
@@ -74,18 +78,10 @@ export const ProductDetail = () => {
               </div>
             </div>
             <div className="chart-content-container">
-              <p>Rules</p>
-              <ul>
-                <li>Vehicles without proper authorization are not allowed.</li>
-                <li>
-                  Parking is only permitted during specified hours. Violators
-                  may be subject to fines or towing.
-                </li>
-                <li>
-                  Pay required parking fees using designated methods, and
-                  display proof of payment.
-                </li>
-              </ul>
+              <video controls>
+                <source src="../src/assets/reversed.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
         )}
